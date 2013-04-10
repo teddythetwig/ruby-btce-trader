@@ -1,4 +1,4 @@
-require '~/Documents/Ruby/ruby-btce/lib/btce.rb'
+
 require 'csv'
 module BtceTrader
   $data_window=[]
@@ -14,7 +14,7 @@ module BtceTrader
       end
     
       def step
-        #each step represents one and a half minutes on btce
+        #each step represents 20 seconds on btce
         #puts data
       end
       
