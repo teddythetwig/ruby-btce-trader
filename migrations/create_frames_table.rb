@@ -33,14 +33,29 @@ module BtceTrader
         t.integer :frame_id
         t.timestamps
       end
+      add_index :trades, :date
     end
     def self.down
       drop_table :frames
     end
   end
   class CreateTickers < ActiveRecord::Migration
-    #create_table :tickers 
-  end    
+    create_table :tickers do |t|
+      t.float :high
+      t.float :low
+      t.float :avg
+      t.float :vol
+      t.float :vol_cur
+      t.float :last
+      t.float :buy
+      t.float :sell
+      t.integer :server_time
+      t.integer :frame_id
+    end
+  end   
+  
+  
   CreateFrames.up
   CreateTrades.up
+  CreateTickers.up
  end
