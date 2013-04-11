@@ -38,7 +38,9 @@ module BtceTrader
       drop_table :frames
     end
   end
-   
+  class CreateTickers < ActiveRecord::Migration
+    #create_table :tickers 
+  end    
   CreateFrames.up
   CreateTrades.up
  end

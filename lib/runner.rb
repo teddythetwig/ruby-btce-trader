@@ -33,8 +33,9 @@ module BtceTrader
             #end
             
           else if operation == "ticker"
-            #data[pair] =  Btce::PublicAPI.get_pair_operation_json(pair,operation)
-            
+            ticker = response[operation]
+            new_frame.tickers.create(ticker)
+          end
             
             
             
